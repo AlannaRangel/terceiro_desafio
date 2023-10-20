@@ -1,0 +1,676 @@
+{
+	"info": {
+		"_postman_id": "9fddf221-1724-4f51-8a5e-c263d1e83660",
+		"name": "Resultados das requisições.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "29771059"
+	},
+	"item": [
+		{
+			"name": "Criar proposta",
+			"item": [
+				{
+					"name": "Cadastro cpf.",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cpf\": \"12345678901\",\r\n    \"nome\": \"Amanda\"\r\n}\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8082/employees"
+					},
+					"response": [
+						{
+							"name": "Cadastro cpf.",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"cpf\": \"12345678901\",\r\n    \"nome\": \"Amanda\"\r\n}\r\n\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8089/employees"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 20 Oct 2023 13:16:54 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"cpf\": \"12345678901\",\n    \"nome\": \"Amanda\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Proposta de Melhoria.",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Proposta de mudança\",\r\n  \"description\": \"Melhoria interna.\",\r\n  \"author\": \"Davi\",\r\n  \"createdDate\": \"2023-10-19T10:00:00\",\r\n  \"votingEndTime\": \"2023-11-01T14:30:00\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8089/propostas"
+					},
+					"response": [
+						{
+							"name": "Proposta de Melhoria.",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"title\": \"Proposta de mudança\",\r\n  \"description\": \"Melhoria interna.\",\r\n  \"author\": \"Fernanda\",\r\n  \"createdDate\": \"2023-10-19T10:00:00\",\r\n  \"votingEndTime\": \"2023-11-01T14:30:00\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8089/propostas"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain;charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "27"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 20 Oct 2023 13:17:18 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "Proposta criada com sucesso"
+						}
+					]
+				},
+				{
+					"name": "Voto Melhoria.",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"employeeId\": \"1\",\r\n  \"proposalId\": 4,\r\n  \"votoType\": \"APPROVE\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8089/votes"
+					},
+					"response": [
+						{
+							"name": "Voto Melhoria.",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"employeeId\": \"1\",\r\n  \"proposalId\": 2,\r\n  \"votoType\": \"APPROVE\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8089/votes"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 20 Oct 2023 13:17:42 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 3,\n    \"employeeId\": \"1\",\n    \"proposalId\": 2,\n    \"votoType\": \"APPROVE\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Verificação de cpf.",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8089/employees/5649819/can-vote"
+					},
+					"response": [
+						{
+							"name": "Verificação de cpf.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "http://localhost:8089/employees/5649819/can-vote"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain;charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "11"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 20 Oct 2023 13:17:56 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "cannot vote"
+						},
+						{
+							"name": "Verificação de cpf.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "http://localhost:8089/employees/12345678901/can-vote"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain;charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "8"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 20 Oct 2023 13:18:20 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "can vote"
+						}
+					]
+				},
+				{
+					"name": "Contabilizar votos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8089/propostas/2/resultado"
+					},
+					"response": [
+						{
+							"name": "Resultado de votação.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "http://localhost:8089/propostas/2/resultado"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 20 Oct 2023 13:42:34 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Aprovados\": 1,\n    \"Rejeitados\": 0\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Funcionarios",
+			"item": [
+				{
+					"name": "Listar funcionarios.",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8084/funcionarios"
+					},
+					"response": [
+						{
+							"name": "Listar funcionarios.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8084/funcionarios"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 20 Oct 2023 13:46:20 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"nome\": \"Danilo\"\n    },\n    {\n        \"id\": 2,\n        \"nome\": \"Gabriela\"\n    },\n    {\n        \"id\": 3,\n        \"nome\": \"Assis\"\n    },\n    {\n        \"id\": 4,\n        \"nome\": \"Amanda\"\n    },\n    {\n        \"id\": 5,\n        \"nome\": \"Raquel\"\n    },\n    {\n        \"id\": 6,\n        \"nome\": \"Jonas\"\n    },\n    {\n        \"id\": 7,\n        \"nome\": \"Bia\"\n    },\n    {\n        \"id\": 8,\n        \"nome\": \"Davi\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Cadastrar funcionario.",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": \"5\",\r\n  \"nome\": \"Manuela\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8084/funcionarios"
+					},
+					"response": [
+						{
+							"name": "Cadastrar funcionario.",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"id\": \"9\",\r\n  \"nome\": \"Sofia\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8084/funcionarios"
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 20 Oct 2023 13:46:53 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 9,\n    \"nome\": \"Sofia\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Buscar funcionario.",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8084/funcionarios/8"
+					},
+					"response": [
+						{
+							"name": "Buscar funcionario.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "http://localhost:8084/funcionarios/8"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 20 Oct 2023 13:47:06 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 8,\n    \"nome\": \"Davi\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Deletar funcionario.",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8084/funcionarios/8"
+					},
+					"response": [
+						{
+							"name": "Deletar funcionario.",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": "http://localhost:8084/funcionarios/9"
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 20 Oct 2023 13:47:30 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Votacao",
+			"item": [
+				{
+					"name": "Iniciar votação.",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"dataInicio\": \"2023-10-20T08:00:00\",\r\n    \"dataFim\": \"2023-10-20T18:00:00\",\r\n    \"ativa\": true\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8083/votacao/iniciar"
+					},
+					"response": [
+						{
+							"name": "Iniciar votação.",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 1,\r\n    \"dataInicio\": \"2023-10-20T08:00:00\",\r\n    \"dataFim\": \"2023-10-20T18:00:00\",\r\n    \"ativa\": true\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8083/votacao/iniciar"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 20 Oct 2023 13:48:32 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"dataInicio\": \"2023-10-20T08:00:00\",\n    \"dataFim\": \"2023-10-20T18:00:00\",\n    \"ativa\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "Voto.",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"funcionarioId\": 1,\r\n    \"aprovado\": true\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8083/votacao/votar"
+					},
+					"response": [
+						{
+							"name": "Voto.",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"funcionarioId\": 1,\r\n    \"aprovado\": true\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8083/votacao/votar"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain;charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "17"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 20 Oct 2023 13:48:54 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "Votou com sucesso"
+						}
+					]
+				}
+			]
+		}
+	]
+}
